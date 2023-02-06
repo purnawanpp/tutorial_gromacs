@@ -1,7 +1,3 @@
-# Tutorial_gromacs
-Tutorial Gromacs Protein-Ligand
-Semua input file dapat didownload, setelah didownload dapat diextract.
-
 # Command to running GROMACS (Input FIle From CHARMM-GUI)
 1. gmx grompp -f step4.0_minimization.mdp -o step4.0_minimization.tpr -c step3_input.gro -r step3_input.gro -p topol.top -n index.ndx -maxwarn -1
 2. gmx mdrun -v -deffnm step4.0_minimization
