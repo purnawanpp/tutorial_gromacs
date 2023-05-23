@@ -6,3 +6,7 @@
 5. export GMX_MAXCONSTRWARN=-1
 6. gmx grompp -f step5_production.mdp -o step5_1.tpr -c step4.1_equilibration.gro -p topol.top -n index.ndx -maxwarn -1
 7. gmx mdrun -v -deffnm step5_1
+
+
+# Running again without restart
+1. gmx mdrun -s step5_1.tpr -cpi step5_1.cpt -append -deffnm step5_1 -nb gpu
