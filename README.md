@@ -8,5 +8,5 @@
 7. gmx mdrun -v -deffnm step5_1
 
 
-# Running again without restart
+# If an error occurs within a certain time, it can be continued without repeating it from the beginning
 1. gmx mdrun -s step5_1.tpr -cpi step5_1.cpt -append -deffnm step5_1 -nb gpu
