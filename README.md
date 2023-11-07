@@ -10,3 +10,7 @@
 
 # If an error occurs within a certain time, it can be continued without repeating it from the beginning
 1. gmx mdrun -s step5_1.tpr -cpi step5_1.cpt -append -deffnm step5_1 -nb gpu
+
+# MMGBSA Calculation
+![Screenshot_1](https://github.com/purnawanpp/tutorial_gromacs/assets/77323253/94249ebe-ca27-4064-b746-cdb02b73fd57)
+
