@@ -14,3 +14,9 @@
 # MMGBSA Calculation
 ![Screenshot_1](https://github.com/purnawanpp/tutorial_gromacs/assets/77323253/94249ebe-ca27-4064-b746-cdb02b73fd57)
 
+# PLOT PCA
+gmx covar -s step5_1.tpr -f analisis.xtc -o eigenvalues.xvg -v eigenvectors.trr
+1
+15
+gmx anaeig -s step5_1.tpr -f analisis.xtc -v eigenvectors.trr -first 1 -last 2 -proj projection.xvg
+gmx anaeig -v eigenvectors.trr -f analisis.xtc -s step5_1.tpr -n new_index.ndx -comp comp.xvg -rmsf eigrmsf.xvg -2d 2d.xvg -b 1 -tu ns -first 1 -last 200
