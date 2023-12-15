@@ -16,7 +16,7 @@
 
 # PLOT PCA
 1. gmx covar -s step5_1.tpr -f analisis.xtc -o eigenvalues.xvg -v eigenvectors.trr
-1
-15
-2. gmx anaeig -s step5_1.tpr -f analisis.xtc -v eigenvectors.trr -first 1 -last 2 -proj projection.xvg
-3. gmx anaeig -v eigenvectors.trr -f analisis.xtc -s step5_1.tpr -n new_index.ndx -comp comp.xvg -rmsf eigrmsf.xvg -2d 2d.xvg -b 1 -tu ns -first 1 -last 200
+2. Select protein 1
+3. Select ligand 15 (check code your ligand)
+4. gmx anaeig -s step5_1.tpr -f analisis.xtc -v eigenvectors.trr -first 1 -last 2 -proj projection.xvg
+5. gmx anaeig -v eigenvectors.trr -f analisis.xtc -s step5_1.tpr -n new_index.ndx -comp comp.xvg -rmsf eigrmsf.xvg -2d 2d.xvg -b 1 -tu ns -first 1 -last 200
