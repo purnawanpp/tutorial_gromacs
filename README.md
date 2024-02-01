@@ -18,6 +18,9 @@
 # MMGBSA Calculation
 ![Screenshot_1](https://github.com/purnawanpp/tutorial_gromacs/assets/77323253/94249ebe-ca27-4064-b746-cdb02b73fd57)
 
+# MMGBSA Calculation
+1. gmx_MMPBSA -O -i mmpbsa.in -cs md.tpr -ci index.ndx -cg 1 13 -ct md_noPBC.xtc -cp topol.top -o FINAL_RESULTS_MMPBSA.dat -eo FINAL_RESULTS_MMPBSA.csv
+
 # PLOT PCA
 1. gmx covar -s step5_1.tpr -f analisis.xtc -o eigenvalues.xvg -v eigenvectors.trr
 2. Select protein 1
