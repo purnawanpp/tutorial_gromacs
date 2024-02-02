@@ -12,7 +12,7 @@
 1. gmx mdrun -s step5_1.tpr -cpi step5_1.cpt -append -deffnm step5_1 -nb GPU
 
 # Remove PBC with no Jump
-1. gmx trjconv -s (.tpr) -f (.xtc) -pbc nojump -o .xtc
+1. gmx trjconv -s md.tpr -f md.xtc -pbc nojump -o analisis.xtc
 
 
 # MMGBSA Calculation
