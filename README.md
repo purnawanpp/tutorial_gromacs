@@ -1,10 +1,10 @@
 # Command to running GROMACS (Input File From CHARMM-GUI)
-1. gmx grompp -f step4.0_minimization.mdp -o step4.0_minimization.tpr -c step3_input.gro -r step3_input.gro -p topol.top -n index.ndx -maxwarn -1
+1. gmx grompp -f step4.0_minimization.mdp -o step4.0_minimization.tpr -c step3_input.gro -r step3_input.gro -p topol.top -n index.ndx -maxwarn 1
 2. gmx mdrun -v -deffnm step4.0_minimization
-3. gmx grompp -f step4.1_equilibration.mdp -o step4.1_equilibration.tpr -c step4.0_minimization.gro -r step3_input.gro -p topol.top -n index.ndx -maxwarn -1
+3. gmx grompp -f step4.1_equilibration.mdp -o step4.1_equilibration.tpr -c step4.0_minimization.gro -r step3_input.gro -p topol.top -n index.ndx -maxwarn 1
 4. gmx mdrun -v -deffnm step4.1_equilibration
 5. export GMX_MAXCONSTRWARN=-1
-6. gmx grompp -f step5_production.mdp -o step5_1.tpr -c step4.1_equilibration.gro -p topol.top -n index.ndx -maxwarn -1
+6. gmx grompp -f step5_production.mdp -o step5_1.tpr -c step4.1_equilibration.gro -p topol.top -n index.ndx -maxwarn 1
 7. gmx mdrun -v -deffnm step5_1
 
 
@@ -14,12 +14,14 @@
 # Remove PBC with no Jump
 1. gmx trjconv -s md.tpr -f md.xtc -pbc nojump -o analisis.xtc
 
-
 # MMGBSA Calculation
 ![Screenshot_1](https://github.com/purnawanpp/tutorial_gromacs/assets/77323253/94249ebe-ca27-4064-b746-cdb02b73fd57)
 
 # MMGBSA Calculation
 1. gmx_MMPBSA -O -i mmpbsa.in -cs md.tpr -ci index.ndx -cg 1 13 -ct md_noPBC.xtc -cp topol.top -o FINAL_RESULTS_MMPBSA.dat -eo FINAL_RESULTS_MMPBSA.csv
+
+# MMPBSA using mpirun
+1. mpirun -np 8 gmx_MMPBSA -O -i mmpbsa.in -cs md.tpr -cp topol.top -ci new_index.ndx -cg 1 13 -ct analisis.xtc
 
 # PLOT PCA
 1. gmx covar -s step5_1.tpr -f analisis.xtc -o eigenvalues.xvg -v eigenvectors.trr
