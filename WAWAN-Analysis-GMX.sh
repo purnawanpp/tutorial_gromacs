@@ -2,7 +2,7 @@
 
 echo "Center the trajectory and remove PBC artifacts choose 1 protein and 0 sistem."
 
-# Step 1: Center the trajectory and remove PBC artifacts pilih 1 protein dan 0 sistem
+# Step 1: Center the trajectory and remove PBC artifacts choose 1 protein dan 0 sistem
 gmx trjconv -s md.tpr -f md.xtc -o md_center.xtc -n index.ndx -center -pbc mol -ur compact
 echo "RMSD analysis, choose backbone 4 and ligand 13 analysis, this depends on what will be analyzed later."
 
@@ -11,7 +11,7 @@ gmx rms -s md.tpr -f md_center.xtc -o rmsd_pro.xvg -tu ns
 
 # Step 3: Plot RMSD using xmgrace 
 xmgrace rmsd_pro.xvg
-echo "RMSF analysis, pilih c-alfa 3, this depends on what will be analyzed later."
+echo "RMSF analysis, choose c-alfa 3, this depends on what will be analyzed later."
 
 # Step 4: RMSF analysis, choose c-alfa 3, this is flexible according to what will be analyzed
 gmx rmsf -f md_center.xtc -s md.tpr -o rmsf.xvg -res
