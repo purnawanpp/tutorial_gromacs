@@ -23,6 +23,9 @@
 # MMPBSA using mpirun
 1. mpirun -np 8 gmx_MMPBSA -O -i mmpbsa.in -cs md.tpr -cp topol.top -ci new_index.ndx -cg 1 13 -ct analisis.xtc
 
+# Analysis
+1. You can use this script 
+
 # PLOT PCA
 1. gmx covar -s step5_1.tpr -f analisis.xtc -o eigenvalues.xvg -v eigenvectors.trr
 2. Select protein 1
