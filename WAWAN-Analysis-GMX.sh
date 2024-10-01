@@ -18,7 +18,7 @@ gmx rmsf -f md_center.xtc -s md.tpr -o rmsf.xvg -res
 
 # Step 5: Plot RMSF using xmgrace
 xmgrace rmsf.xvg
-echo "SASA (Solvent Accessible Surface Area) analysis, choose protein 1 or depending on what you want it can be bacbone, or c alpha."
+echo "SASA (Solvent Accessible Surface Area) analysis, choose protein 1 or depending on what you want it can be backbone, or c alpha."
 
 # Step 6: SASA (Solvent Accessible Surface Area) analysis, Choose protein 1 or flexible as desired, bacbone or c alpha
 gmx sasa -s md.tpr -f md_center.xtc -o sasa.xvg -tu ns
