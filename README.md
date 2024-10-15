@@ -25,6 +25,8 @@
 
 # Analysis
 1. You can use this script (https://github.com/purnawanpp/tutorial_gromacs/blob/main/WAWAN-Analysis-GMX.sh).
+2. run in terminal using this command: chmod +x WAWAN-Analysis-GMX.sh
+3. ./WAWAN-Analysis-GMX.sh
 
 # PLOT PCA
 1. gmx covar -s step5_1.tpr -f analisis.xtc -o eigenvalues.xvg -v eigenvectors.trr
