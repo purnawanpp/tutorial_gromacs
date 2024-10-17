@@ -64,7 +64,7 @@ xmgrace modified_gyration.xvg
 echo "Hydrogen bond analysis, select protein (1) and ligand (13)."
 
 # Step 11: Hydrogen bond analysis
-gmx hbond -s md.tpr -f md_center.xtc -num hbond.xvg -tu ns 
+gmx hbond-legacy -s md.tpr -f md_center.xtc -num hbond.xvg -tu ns 
 
 # Step 12: Plot hydrogen bond data using xmgrace
 xmgrace hbond.xvg
