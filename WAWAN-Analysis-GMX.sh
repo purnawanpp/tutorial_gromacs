@@ -49,7 +49,11 @@ if [ -f "gyration.xvg" ]; then
         print ""
     }
     ' "gyration.xvg" > modified_gyration.xvg
-    echo "The first column of gyration.xvg has been modified and saved as modified_gyration.xvg."
+    
+    # Replace "ps" with "ns" in the modified file
+    sed -i 's/ps/ns/g' modified_gyration.xvg
+
+    echo "The first column of gyration.xvg has been modified and 'ps' has been replaced by 'ns' in modified_gyration.xvg."
 else
     echo "gyration.xvg file not found!"
 fi
